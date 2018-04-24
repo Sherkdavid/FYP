@@ -141,19 +141,6 @@ def algorithm_tests():
     file.write(targetted[p].to_html())
     file.close()
 
-#returns the scored fit of instance i to instance j
-def fit_instance(i,j):
-    index = 0
-    score = 0
-    #accumulate
-    for feature in i:
-        #note: score aggregates a cumulative positive difference for each feature
-        score+=(((feature**2)-(j[index]**2))**2)
-        index+=1
-    #same instance
-    if score ==0:
-        return 100000.0
-    return score
 
 def knr_fit_predict(knr,instance):
     # Get the index array for nearest neighbours to instance
